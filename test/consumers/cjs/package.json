@@ -1,0 +1,11 @@
+{
+  "name": "consumer-cjs",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "test": "node index.cjs"
+  },
+  "dependencies": {
+    "@killb/logger": "file:../killb-logger.tgz"
+  }
+}

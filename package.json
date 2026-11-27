@@ -1,0 +1,79 @@
+{
+  "name": "@killb/logger",
+  "version": "0.0.0-development",
+  "description": "Structured logger for Node.js services on Google Cloud: request context, Cloud Logging lines with trace correlation, and secret masking by default",
+  "license": "MIT",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kill-B/killb-logger.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Kill-B/killb-logger/issues"
+  },
+  "homepage": "https://github.com/Kill-B/killb-logger#readme",
+  "keywords": [
+    "logger",
+    "logging",
+    "google-cloud",
+    "cloud-logging",
+    "request-id",
+    "trace",
+    "masking"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist/",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "lint": "eslint . --max-warnings 0",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test test/*.test.ts",
+    "test:consumers": "node test/consumers/run.ts",
+    "prepack": "npm run build",
+    "semantic-release": "semantic-release"
+  },
+  "prettier": "@killb/code-style/prettier",
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
+  "devDependencies": {
+    "@eslint/js": "9.39.5",
+    "@killb/code-style": "1.1.2",
+    "@types/node": "22.20.7",
+    "eslint": "9.39.5",
+    "prettier": "3.9.10",
+    "semantic-release": "25.0.9",
+    "tslog": "5.5.0",
+    "tsup": "8.5.1",
+    "typescript": "5.9.3"
+  }
+}

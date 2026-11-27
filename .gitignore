@@ -1,0 +1,7 @@
+node_modules/
+dist/
+*.tgz
+.DS_Store
+test/consumers/*/node_modules/
+test/consumers/*/package-lock.json
+test/consumers/*/killb-logger.tgz
